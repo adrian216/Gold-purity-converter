@@ -18,7 +18,7 @@ public class HomeController {
     GoldService goldService;
 
 
-    @GetMapping
+    @GetMapping("/")
     public ModelAndView getCalculateView() {
         return new ModelAndView("/form");
     }
