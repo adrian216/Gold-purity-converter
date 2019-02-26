@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <br>
+    <title>Konwerter złota</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.0.0/css/font-awesome.min.css">
+</head>
+
+<body>
+<img src="/static/logo.jpg" th:src="@{/logo.jpg}">
+<br><br>
+<div class="container">
+<h4 th:each="result : ${resultList}" th:text="${result}" th:frameborder="1"></h4>
+<br>
+<a th:href="@{/calculate}">Powrót do kalkulatora</a>
+</div>
+
+</div>
+</body>
+</html>

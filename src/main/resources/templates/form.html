@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <br>
+    <title>Konwerter złota</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.0.0/css/font-awesome.min.css">
+</head>
+
+<body>
+<div class="container">
+    <div class="alert alert-danger" role="alert" th:if="${param.error}">
+        Nieprawidłowe dane!
+    </div>
+   <img src="/static/logo.jpg" th:src="@{/logo.jpg}">
+    <br><br>
+    <form th:action="@{/calculate}" method="POST" >
+        <label for="weight" class="sr-only">Waga w gramach</label>
+        <input type="number" step="0.01" id="weight" name="weight" class="col-md-3 field-label-responsive" placeholder="Waga w gramach" required autofocus>
+        <br>
+        <br>
+        <select name="karat">
+            <option th:value=999 th:text="24K+' / '+999" ></option>
+            <option th:value=750 th:text="18K+' / '+750" ></option>
+            <option th:value=585 th:text="14K+' / '+585" ></option>
+            <option th:value=333 th:text="8K+' / '+333"></option>
+        </select>
+        <br>
+        <br>
+
+        <button class="btn btn-primary" type="submit">Oblicz</button>
+    </form>
+</div>
+</body>
+</html>
