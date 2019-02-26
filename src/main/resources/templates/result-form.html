@@ -12,9 +12,9 @@
 </head>
 
 <body>
-<img src="/static/logo.jpg" th:src="@{/logo.jpg}">
-<br><br>
 <div class="container">
+    <img src="/static/logo.jpg" th:src="@{/logo.jpg}">
+    <br><br>
 <h4 th:each="result : ${resultList}" th:text="${result}" th:frameborder="1"></h4>
 <br>
 <a th:href="@{/calculate}">Powrót do kalkulatora</a>
